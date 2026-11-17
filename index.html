@@ -44,6 +44,23 @@ footer{text-align:center;padding:4rem 1.5rem 3rem;border-top:1px solid #222}
 .why-box h3{font-family:'Playfair',serif;font-weight:400;font-size:1.8rem;color:#fff;margin:0 0 18px}
 .why-box p{margin:0 0 14px}.why-box a{color:#fff}
 .why-x{position:absolute;top:12px;right:16px;background:none;border:0;color:#999;font-size:28px;cursor:pointer}
+
+/* Player oben, ruhige Liste */
+.player{margin-bottom:2.2rem}
+.player .vid{background:#0a0a0a;border:1px solid #222;border-radius:4px;overflow:hidden}
+.fassade{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:#000;cursor:pointer}
+.fassade img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.55);transition:filter .4s}
+.fassade:hover img{filter:grayscale(.3) brightness(.7)}
+.fassade .gross{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:74px;height:74px;border:1px solid #fff;border-radius:50%;color:#fff;font-size:24px;display:flex;align-items:center;justify-content:center;padding-left:5px}
+.jetzt{font-size:1rem;color:#aaa;margin:.8rem 0 0}.jetzt .nr{font-family:"Oswald",sans-serif;color:#777;margin-right:.6rem}
+.liste li{padding:0;border-bottom:1px solid #1a1a1a}
+.ep{all:unset;box-sizing:border-box;display:flex;gap:1.5rem;align-items:baseline;width:100%;padding:1.2rem 0 .4rem;cursor:pointer}
+.ep:hover .t,.ep:focus-visible .t{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.ep .t{font-size:1.2rem;flex:1;color:#ddd}
+.ep .play{font-size:.8rem;color:#666;width:1.2rem;text-align:right}
+.ep.aktiv .t{color:#fff}.ep.aktiv .play{color:#fff}
+.liste .sub{margin:0 0 1.1rem 3.5rem;font-size:.95rem}
+.liste .alt{font-size:.8rem;color:#777;white-space:nowrap}.liste .alt a{color:#999}
 </style>
 </head>
 <body>
@@ -67,48 +84,54 @@ footer{text-align:center;padding:4rem 1.5rem 3rem;border-top:1px solid #222}
 
 <section id="folgen">
   <h2>Folgen</h2>
-  <ol>
+  <div class="player">
+    <div class="vid" id="spieler" data-yt="LYujTS8feLM">
+      <button class="fassade" type="button" aria-label="Folge abspielen"><img src="https://i.ytimg.com/vi/LYujTS8feLM/hqdefault.jpg" alt=""><span class="gross">▶</span></button>
+    </div>
+    <p class="jetzt"><span class="nr" id="jnr">07</span> <span id="jt">Leonie Hahn: René Pollesch, Benno Besson und «Horizonte»</span></p>
+  </div>
+  <ol class="liste">
     <li>
-      <div class="head"><span class="nr">07</span><span class="t">Leonie Hahn: René Pollesch, Benno Besson und «Horizonte»</span><span class="d">31:17</span></div>
-      <p class="sub">Ein historisches Dokument über «Und jetzt?», eine der letzten Arbeiten von René Pollesch.</p>
-      <div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/LYujTS8feLM" allow="accelerometer; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Folge 07 auf YouTube"></iframe></div>
-      <p class="alt"><a href="https://open.spotify.com/episode/2y5TytExWQH9uakYTKHxMV" target="_blank" rel="noopener">Auf Spotify hören</a> · <a href="https://www.youtube.com/watch?v=LYujTS8feLM&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">Auf YouTube ansehen</a></p>
+      <button class="ep aktiv" type="button" data-yt="LYujTS8feLM" data-nr="07" data-t="Leonie Hahn: René Pollesch, Benno Besson und «Horizonte»">
+        <span class="nr">07</span><span class="t">Leonie Hahn: René Pollesch, Benno Besson und «Horizonte»</span><span class="d">31:17</span><span class="play" aria-hidden="true">▶</span>
+      </button>
+      <p class="sub">Ein historisches Dokument über «Und jetzt?», eine der letzten Arbeiten von René Pollesch. <span class="alt"><a href="https://open.spotify.com/episode/2y5TytExWQH9uakYTKHxMV" target="_blank" rel="noopener">Spotify</a> · <a href="https://www.youtube.com/watch?v=LYujTS8feLM&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">YouTube</a></span></p>
     </li>
     <li>
-      <div class="head"><span class="nr">06</span><span class="t">Thomas Zurbuchen: Galilei und das Wesen der Wissenschaft</span><span class="d">41:23</span></div>
-      <p class="sub">Brechts «Leben des Galilei» und das Wesen der Wissenschaft, mit dem früheren Wissenschaftschef der NASA.</p>
-      <div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DTprsG5LR0o" allow="accelerometer; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Folge 06 auf YouTube"></iframe></div>
-      <p class="alt"><a href="https://open.spotify.com/episode/5BDVRioQlcwjSuYhQmDYKf" target="_blank" rel="noopener">Auf Spotify hören</a> · <a href="https://www.youtube.com/watch?v=DTprsG5LR0o&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">Auf YouTube ansehen</a></p>
+      <button class="ep" type="button" data-yt="DTprsG5LR0o" data-nr="06" data-t="Thomas Zurbuchen: Galilei und das Wesen der Wissenschaft">
+        <span class="nr">06</span><span class="t">Thomas Zurbuchen: Galilei und das Wesen der Wissenschaft</span><span class="d">41:23</span><span class="play" aria-hidden="true">▶</span>
+      </button>
+      <p class="sub">Brechts «Leben des Galilei» und das Wesen der Wissenschaft, mit dem früheren Wissenschaftschef der NASA. <span class="alt"><a href="https://open.spotify.com/episode/5BDVRioQlcwjSuYhQmDYKf" target="_blank" rel="noopener">Spotify</a> · <a href="https://www.youtube.com/watch?v=DTprsG5LR0o&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">YouTube</a></span></p>
     </li>
     <li>
-      <div class="head"><span class="nr">05</span><span class="t">Herbstgeflüster 3: Milo Rau, Der Zauberer von Oz und Der Sanfte</span><span class="d">1:09:50</span></div>
-      <p class="sub">Wo sitzt das Böse im Theater, und wer traut sich, es zu zeigen?</p>
-      <div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DuYmxSaKp1U" allow="accelerometer; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Folge 05 auf YouTube"></iframe></div>
-      <p class="alt"><a href="https://open.spotify.com/episode/3gdqKp0cpqndH45WIJa6Ua" target="_blank" rel="noopener">Auf Spotify hören</a> · <a href="https://www.youtube.com/watch?v=DuYmxSaKp1U&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">Auf YouTube ansehen</a></p>
+      <button class="ep" type="button" data-yt="DuYmxSaKp1U" data-nr="05" data-t="Herbstgeflüster 3: Milo Rau, Der Zauberer von Oz und Der Sanfte">
+        <span class="nr">05</span><span class="t">Herbstgeflüster 3: Milo Rau, Der Zauberer von Oz und Der Sanfte</span><span class="d">1:09:50</span><span class="play" aria-hidden="true">▶</span>
+      </button>
+      <p class="sub">Wo sitzt das Böse im Theater, und wer traut sich, es zu zeigen? <span class="alt"><a href="https://open.spotify.com/episode/3gdqKp0cpqndH45WIJa6Ua" target="_blank" rel="noopener">Spotify</a> · <a href="https://www.youtube.com/watch?v=DuYmxSaKp1U&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">YouTube</a></span></p>
     </li>
     <li>
-      <div class="head"><span class="nr">04</span><span class="t">Visual Radio mit Nicolas Stemann</span><span class="d">51:40</span></div>
-      <p class="sub">Ein Visual-Radio-Experiment in pandemischen Zuständen: mit dem Zug nach Konolfingen.</p>
-      <div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/gWPOUIkbWUo" allow="accelerometer; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Folge 04 auf YouTube"></iframe></div>
-      <p class="alt"><a href="https://open.spotify.com/episode/5dfLZqz5ureyRcAXOO62Bj" target="_blank" rel="noopener">Auf Spotify hören</a> · <a href="https://www.youtube.com/watch?v=gWPOUIkbWUo&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">Auf YouTube ansehen</a></p>
+      <button class="ep" type="button" data-yt="gWPOUIkbWUo" data-nr="04" data-t="Visual Radio mit Nicolas Stemann">
+        <span class="nr">04</span><span class="t">Visual Radio mit Nicolas Stemann</span><span class="d">51:40</span><span class="play" aria-hidden="true">▶</span>
+      </button>
+      <p class="sub">Ein Visual-Radio-Experiment in pandemischen Zuständen: mit dem Zug nach Konolfingen. <span class="alt"><a href="https://open.spotify.com/episode/5dfLZqz5ureyRcAXOO62Bj" target="_blank" rel="noopener">Spotify</a> · <a href="https://www.youtube.com/watch?v=gWPOUIkbWUo&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">YouTube</a></span></p>
     </li>
     <li>
-      <div class="head"><span class="nr">03</span><span class="t">Herbstgeflüster 2: Die Dreigroschenoper als militärisches Ballett</span><span class="d">59:24</span></div>
-      <p class="sub">Ein Sonntagnachmittag in der «Dreigroschenoper» am Schauspielhaus Zürich, hinterste Reihe.</p>
-      <div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/KApo7BQ-_8E" allow="accelerometer; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Folge 03 auf YouTube"></iframe></div>
-      <p class="alt"><a href="https://open.spotify.com/episode/7FxZn2NMR3G7PaJbcR77Ax" target="_blank" rel="noopener">Auf Spotify hören</a> · <a href="https://www.youtube.com/watch?v=KApo7BQ-_8E&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">Auf YouTube ansehen</a></p>
+      <button class="ep" type="button" data-yt="KApo7BQ-_8E" data-nr="03" data-t="Herbstgeflüster 2: Die Dreigroschenoper als militärisches Ballett">
+        <span class="nr">03</span><span class="t">Herbstgeflüster 2: Die Dreigroschenoper als militärisches Ballett</span><span class="d">59:24</span><span class="play" aria-hidden="true">▶</span>
+      </button>
+      <p class="sub">Ein Sonntagnachmittag in der «Dreigroschenoper» am Schauspielhaus Zürich, hinterste Reihe. <span class="alt"><a href="https://open.spotify.com/episode/7FxZn2NMR3G7PaJbcR77Ax" target="_blank" rel="noopener">Spotify</a> · <a href="https://www.youtube.com/watch?v=KApo7BQ-_8E&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">YouTube</a></span></p>
     </li>
     <li>
-      <div class="head"><span class="nr">02</span><span class="t">Herbstgeflüster 1: Hannah Arendt über Brecht</span><span class="d">53:12</span></div>
-      <p class="sub">Zum 70. Todestag von Bertolt Brecht: Hannah Arendts Vortrag über Brecht und das «Kleine Organon» als Kompass.</p>
-      <div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TuBLjq6oq5Q" allow="accelerometer; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Folge 02 auf YouTube"></iframe></div>
-      <p class="alt"><a href="https://open.spotify.com/episode/4DYJ6aWD7ld41k7PIlBYAu" target="_blank" rel="noopener">Auf Spotify hören</a> · <a href="https://www.youtube.com/watch?v=TuBLjq6oq5Q&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">Auf YouTube ansehen</a></p>
+      <button class="ep" type="button" data-yt="TuBLjq6oq5Q" data-nr="02" data-t="Herbstgeflüster 1: Hannah Arendt über Brecht">
+        <span class="nr">02</span><span class="t">Herbstgeflüster 1: Hannah Arendt über Brecht</span><span class="d">53:12</span><span class="play" aria-hidden="true">▶</span>
+      </button>
+      <p class="sub">Zum 70. Todestag von Bertolt Brecht: Hannah Arendts Vortrag über Brecht und das «Kleine Organon» als Kompass. <span class="alt"><a href="https://open.spotify.com/episode/4DYJ6aWD7ld41k7PIlBYAu" target="_blank" rel="noopener">Spotify</a> · <a href="https://www.youtube.com/watch?v=TuBLjq6oq5Q&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">YouTube</a></span></p>
     </li>
     <li id="f01">
-      <div class="head"><span class="nr">01</span><span class="t">Sommerloch: alle neun Folgen</span><span class="d">1:37:15</span></div>
-      <p class="sub">Regula Stämpfli und Sama Schwarz über das Zurich Film Festival: Compliance, Good Governance, Sponsoren, Glamour und Filz.</p>
-      <div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TIXPYBT3K7w" allow="accelerometer; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Folge 01 auf YouTube"></iframe></div>
-      <p class="alt"><a href="https://open.spotify.com/episode/0yz2vXvf2hH2MZnMQgGGkM" target="_blank" rel="noopener">Auf Spotify hören</a> · <a href="https://www.youtube.com/watch?v=TIXPYBT3K7w&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">Auf YouTube ansehen</a></p>
+      <button class="ep" type="button" data-yt="TIXPYBT3K7w" data-nr="01" data-t="Sommerloch: alle neun Folgen">
+        <span class="nr">01</span><span class="t">Sommerloch: alle neun Folgen</span><span class="d">1:37:15</span><span class="play" aria-hidden="true">▶</span>
+      </button>
+      <p class="sub">Regula Stämpfli und Sama Schwarz über das Zurich Film Festival: Compliance, Good Governance, Sponsoren, Glamour und Filz. <span class="alt"><a href="https://open.spotify.com/episode/0yz2vXvf2hH2MZnMQgGGkM" target="_blank" rel="noopener">Spotify</a> · <a href="https://www.youtube.com/watch?v=TIXPYBT3K7w&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">YouTube</a></span></p>
     </li>
   </ol>
 </section>
@@ -142,5 +165,17 @@ footer{text-align:center;padding:4rem 1.5rem 3rem;border-top:1px solid #222}
   </div>
 </div>
 <script>document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('why').classList.remove('open')})</script>
+<script>
+(function(){
+  var sp=document.getElementById('spieler'),jnr=document.getElementById('jnr'),jt=document.getElementById('jt');
+  function lade(id,auto){sp.dataset.yt=id;sp.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+(auto?'?autoplay=1':'')+'" allow="accelerometer; autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Folge abspielen"></iframe>';}
+  sp.addEventListener('click',function(e){if(e.target.closest('.fassade'))lade(sp.dataset.yt,true);});
+  document.querySelectorAll('.ep').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.ep.aktiv').forEach(function(x){x.classList.remove('aktiv')});b.classList.add('aktiv');
+    jnr.textContent=b.dataset.nr;jt.innerHTML=b.querySelector('.t').innerHTML;lade(b.dataset.yt,true);
+    document.getElementById('folgen').scrollIntoView({behavior:'smooth'});
+  });});
+})();
+</script>
 </body>
 </html>

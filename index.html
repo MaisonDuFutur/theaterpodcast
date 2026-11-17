@@ -34,6 +34,16 @@ li .d{font-family:"Oswald",sans-serif;font-weight:300;color:#777;font-size:.85re
 .links a:hover{border-color:#fff}
 .soon{color:#666;pointer-events:none}
 footer{text-align:center;padding:4rem 1.5rem 3rem;border-top:1px solid #222}
+
+.why-btn{position:fixed;right:22px;bottom:22px;z-index:20;background:#fff;color:#000;border:0;border-radius:22px 22px 4px 22px;padding:12px 18px;font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 24px rgba(255,255,255,.12);animation:wiggle 6s ease-in-out 2s infinite}
+.why-btn:hover{transform:scale(1.05)}
+@keyframes wiggle{0%,90%,100%{transform:rotate(0)}92%{transform:rotate(-4deg)}94%{transform:rotate(4deg)}96%{transform:rotate(-2deg)}}
+.why-bg{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:30;display:none;align-items:center;justify-content:center;padding:20px}
+.why-bg.open{display:flex}
+.why-box{background:#111;border:1px solid #333;border-radius:16px;max-width:620px;max-height:85vh;overflow:auto;padding:34px 34px 28px;position:relative;color:#ddd;line-height:1.65;font-size:1.05rem}
+.why-box h3{font-family:'Playfair',serif;font-weight:400;font-size:1.8rem;color:#fff;margin:0 0 18px}
+.why-box p{margin:0 0 14px}.why-box a{color:#fff}
+.why-x{position:absolute;top:12px;right:16px;background:none;border:0;color:#999;font-size:28px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -94,7 +104,7 @@ footer{text-align:center;padding:4rem 1.5rem 3rem;border-top:1px solid #222}
       <div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TuBLjq6oq5Q" allow="accelerometer; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Folge 02 auf YouTube"></iframe></div>
       <p class="alt"><a href="https://open.spotify.com/episode/4DYJ6aWD7ld41k7PIlBYAu" target="_blank" rel="noopener">Auf Spotify hören</a> · <a href="https://www.youtube.com/watch?v=TuBLjq6oq5Q&amp;list=PLIrSxZ_-Kmog" target="_blank" rel="noopener">Auf YouTube ansehen</a></p>
     </li>
-    <li>
+    <li id="f01">
       <div class="head"><span class="nr">01</span><span class="t">Sommerloch: alle neun Folgen</span><span class="d">1:37:15</span></div>
       <p class="sub">Regula Stämpfli und Sama Schwarz über das Zurich Film Festival: Compliance, Good Governance, Sponsoren, Glamour und Filz.</p>
       <div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TIXPYBT3K7w" allow="accelerometer; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="Folge 01 auf YouTube"></iframe></div>
@@ -116,5 +126,21 @@ footer{text-align:center;padding:4rem 1.5rem 3rem;border-top:1px solid #222}
 <footer>
   <div class="caps">Eine Produktion von Maison du Futur</div>
 </footer>
+
+<button class="why-btn" onclick="document.getElementById('why').classList.add('open')">Warum dieser Podcast?</button>
+<div class="why-bg" id="why" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="why-box" role="dialog" aria-label="Warum dieser Podcast">
+    <button class="why-x" aria-label="Schliessen" onclick="document.getElementById('why').classList.remove('open')">×</button>
+    <h3>Warum dieser Podcast</h3>
+    <p>Am Anfang stand eine Rede. 2022 erklärte ZFF-Direktor Christian Jungen die Vorführung eines Winnetou-Films zum Statement gegen eine angebliche woke Kultur, die alles zerstören wolle. Vier Jahre später stand Greta Thunberg auf dem Green Carpet des ZFF. So schnell dreht der Wind. Der Geschichte dieses sehr theatralen Festivals widmet sich die ganze <a href="#f01" onclick="document.getElementById('why').classList.remove('open')">erste Folge</a>: ein besonderes Bijou, entstanden im Sommerloch, und sehr unterhaltsam.</p>
+    <p>Für uns war Jungens Rede der Startschuss zu einer Kampagne gegen die damalige Leitung des Schauspielhauses Zürich. Was folgte: Infrastruktur wurde abgebaut, eine ganze Digitalbühne aufgegeben statt weitergeführt, viele Menschen verloren ihre Stelle, und mit viel Geld wurde eine Interimsspielzeit eingerichtet. Zweimal wurden völlig neue Logos bestellt, ein durchdachtes Marketing fehlt bis heute.</p>
+    <p>Das Schauspielhaus Zürich ist und bleibt eine Dauerruine, eine mit extrem viel Geld ausgestattete Luxusruine. Anders als das Berliner Ensemble ist es ein geschichtsloser Durchlauferhitzer, der Menschen und Material verbraucht. Und ein Durchlauferhitzer heizt: Es geht ums Verbrennen, um nicht nachhaltiges Handeln, um Brände. In den kommenden Folgen geht es auch um einen Theaterbrand: Robert Walsers Text «Der Theaterbrand» wird am 1. Januar 2027 frei. Anfang Januar erscheint dazu eine Spezialausgabe des Podcasts.</p>
+    <p>Maison du Futur war eine der wenigen Institutionen, die der damaligen Intendanz den Rücken gestärkt haben. Sonst herrschte in der Stadt grosse Stille.</p>
+    <p>Das ist längst vergessen, kaum jemand erinnert sich daran. Zürich ist eine geschichtslose Stadt, sie besteht aus permanenter Gegenwart. Dieser Podcast arbeitet dagegen an. Wir besuchen aktuelle Theaterstücke, schauen aber immer wieder zurück, arbeiten Dinge auf und ziehen Verbindungen.</p>
+    <p>Dafür öffnen wir laufend Gespräche aus dem breiten Erinnerungsarchiv von Maison du Futur. Sie führen ins Weltall und in die Technologie, zu Missbrauch, MeToo und Intimacy-Koordination, in die DDR. Ein weites Feld, aber der Ausgangspunkt ist immer Zürich.</p>
+    <p>Das Theater lebt von der Gegenwart, darin liegt sein Reiz. Seinen Speicher aber zieht es aus der Erinnerung. Darum gibt es diesen Podcast.</p>
+  </div>
+</div>
+<script>document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('why').classList.remove('open')})</script>
 </body>
 </html>
